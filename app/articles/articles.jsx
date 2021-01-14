@@ -1,5 +1,6 @@
 import { Fragment, useContext, useEffect } from "react"
 import context from "../context";
+import { Article } from "./article/article";
 
 export const Articles = () => {
     const { state, dispatch } = useContext(context)
@@ -45,10 +46,7 @@ export const Articles = () => {
     }, []);
     return <Fragment>
         {state.articles.map((article) => {
-            return <div key={article.id}>
-                <h1>{article.title}</h1>
-                <img src={article.images[0].url} alt="" />
-            </div>
+            return <Article  key={article.id} article={article}></Article>
         })}
     </Fragment>
 }
