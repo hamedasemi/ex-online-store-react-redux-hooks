@@ -95,8 +95,8 @@ export default {
         
     ],
     devServer: {
-        host: "0.0.0.0",
-        useLocalIp: true,
+        // host: "0.0.0.0",
+        // useLocalIp: true,
         proxy: {
             "/api": {
                 target: "http://localhost:3000",
