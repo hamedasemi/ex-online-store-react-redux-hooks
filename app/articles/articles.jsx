@@ -18,7 +18,32 @@ export const Articles = () => {
     }
     const fetchArticles = async () => {
         const response = await fetch(`https://graphql.datocms.com?query=query MyQuery {
-                allArticles(filter: {category: {eq: "15655154"}}) {
+                allArticles(filter: {category: {eq: "${state.category}"}}) {
+                    id
+                    rate
+                    price
+                    title
+                    time
+                    specialOffer
+                    sale
+                    new
+                    description
+                    bestseller
+                    images {
+                        url(imgixParams: {w: "400"})
+                    }
+                }
+            }`, {
+            headers: {
+                'Authorization': authorization
+            }
+        });
+        const data = await response.json();
+        dispatch({ type: 'SET-ARTICLES', payload: data.data.allArticles })
+    }
+    const fetchAllArticles = async () => {
+        const response = await fetch(`https://graphql.datocms.com?query=query MyQuery {
+                allArticles() {
                     id
                     rate
                     price
@@ -42,11 +67,15 @@ export const Articles = () => {
         dispatch({ type: 'SET-ARTICLES', payload: data.data.allArticles })
     }
     useEffect(() => {
-        fetchArticles();
-    }, []);
+        if (state.category) {
+            fetchArticles();
+        } else {
+            fetchAllArticles();
+        }
+    }, [state.category]);
     return <Fragment>
         {state.articles.map((article) => {
-            return <Article  key={article.id} article={article}></Article>
+            return <Article key={article.id} article={article}></Article>
         })}
     </Fragment>
 }
