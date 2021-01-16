@@ -1,5 +1,7 @@
 import { useEffect, useContext } from "react";
 import context from "../context";
+import style from './categories.css';
+
 
 export const Categories = () => {
     const { state, dispatch } = useContext(context)
@@ -35,10 +37,10 @@ export const Categories = () => {
     const categoryHandler = (event)=>{
         dispatch({ type: 'SET-CATEGORY', payload: event.target.value })
     }
-    return <select value={state.category} onChange={categoryHandler}>
-        <option value="">All</option>
+    return <div value={state.category} onClick={categoryHandler}>
+        <button className="button" value="">All</button>
         {state.categories.map((category) => {
-            return <option key={category.id} value={category.id}>{category.title}</option>
+            return <button className="button"  key={category.id} value={category.id}>{category.title}</button>
         })}
-    </select>
+        </div>
 }

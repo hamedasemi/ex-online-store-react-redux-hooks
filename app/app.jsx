@@ -4,7 +4,7 @@ import style from './app.css';
 import reducer from './reducer';
 import { Provider } from './context';
 import { Articles } from './articles/articles';
-import { Categories } from './categories/categoties';
+import { Categories } from './categories/categories';
 
 const App = () => {
     const initialState = {
