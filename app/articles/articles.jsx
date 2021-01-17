@@ -1,6 +1,7 @@
 import { Fragment, useContext, useEffect } from "react"
 import context from "../context";
 import { Article } from "./article/article";
+import style from './articles.css'
 
 export const Articles = () => {
     const { state, dispatch } = useContext(context)
@@ -73,9 +74,9 @@ export const Articles = () => {
             fetchAllArticles();
         }
     }, [state.category]);
-    return <Fragment>
+    return <div className={style.articles}>
         {state.articles.map((article) => {
             return <Article key={article.id} article={article}></Article>
         })}
-    </Fragment>
+    </div>
 }

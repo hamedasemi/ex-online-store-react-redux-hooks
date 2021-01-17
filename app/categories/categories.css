@@ -1,9 +1,12 @@
-button {
+.categories{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.button {
     background-color: #4CAF50;
     border: none;
     color: white;
-    width: 150px;
-    height: 40px;
+    padding: 10px;
     margin: 5px 2px;
     text-align: center;
     text-decoration: none;

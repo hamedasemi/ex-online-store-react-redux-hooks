@@ -37,10 +37,10 @@ export const Categories = () => {
     const categoryHandler = (event)=>{
         dispatch({ type: 'SET-CATEGORY', payload: event.target.value })
     }
-    return <div value={state.category} onClick={categoryHandler}>
-        <button className="button" value="">All</button>
+    return <div className={style.categories} onClick={categoryHandler}>
+        <button className={style.button} value="">All</button>
         {state.categories.map((category) => {
-            return <button className="button"  key={category.id} value={category.id}>{category.title}</button>
+            return <button className={style.button}  key={category.id} value={category.id}>{category.title}</button>
         })}
         </div>
 }

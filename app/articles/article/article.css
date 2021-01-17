@@ -1,11 +1,6 @@
-article{
-
-max-width: 925px;
-background-color: rgb(166, 197, 120);
-padding: 10px;
-border: 10px;
-}
-articlediv {
-    background-color: #af4c6a;
-    align-items: center;
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   }
