@@ -1,7 +1,7 @@
-.articles{
-    background-color: rgb(166, 197, 120);
+.articles {
+    background-color: var(--primaryLightColor);
     padding: 10px;
     border: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    }
+}

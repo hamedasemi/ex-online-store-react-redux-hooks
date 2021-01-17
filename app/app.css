@@ -1,6 +1,7 @@
 body {
-    max-width: 1024px;
-    margin: auto;
-    background-color: #43a047;
-  
-  }
+  max-width: 1024px;
+  margin: auto;
+  background-color: var(--primaryColor);
+}
+
+

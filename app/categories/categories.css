@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .button {
-    background-color: #4CAF50;
+    background-color: var(--primaryDarkColor);
     border: none;
     color: white;
     padding: 10px;

@@ -1,6 +1,7 @@
 import { StrictMode, useReducer } from 'react';
 import { render } from 'react-dom';
 import style from './app.css';
+import syyle from './color.css'
 import reducer from './reducer';
 import { Provider } from './context';
 import { Articles } from './articles/articles';
